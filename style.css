@@ -1,0 +1,45 @@
+.background{
+    background-image: url(post.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    text-align: center;
+    }
+.card{
+    margin: 30px;
+    border-radius: 25px;
+    background-color:antiquewhite;
+} 
+.display{
+    display: inline-block;    
+} 
+.submit{
+    display:block;
+    margin-left: 47%;
+    font-size: 20px;
+    background-color: white;
+    border: 0px;
+    border-radius: 5px;
+    color:darkblue;
+    font-size: 24px;
+    font-weight:500;
+}
+.text{
+    font-family: monospace;
+    color: white;
+    margin-top: 50px;
+}
+.main{
+    margin-top: 50px;
+    color: white;
+    font-size: 36px;
+}
+.error{
+    font-size: 26px;
+    color:rgb(6, 12, 0);
+}
+.card-header{
+    font-size: 26px;
+    font-weight: 500;
+}
+
