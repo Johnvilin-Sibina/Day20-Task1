@@ -11,7 +11,9 @@
     background-color:antiquewhite;
 } 
 .display{
-    display: inline-block;    
+    display: inline-block; 
+    height: 100%;
+    width: 100%;   
 } 
 .submit{
     display:block;
