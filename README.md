@@ -1,4 +1,5 @@
 <h1>Day 20 Task 1</h1>
+<h3>Done using PostalPinCode API.</h3>
 <p>The file post.png contains the image used for the background.</p>
 <p>The file index.html contains the link to run the files in a browser.</p>
 <p>The file script.js contains the JavaScript code. In the script file I have created all the required HTML tags dynamically.</p>
