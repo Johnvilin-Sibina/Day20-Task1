@@ -117,7 +117,7 @@ async function data() {
     var offices = final[0].PostOffice;
     
     for (var i = 0; i < offices.length; i++) {
-      var col = create_div("div","class","col-md-3")
+      var col = create_div("div","class","col-md-4")
       var post = create_div("div","class","post_office")
       post.innerHTML = `<div class="card border-dark mb-3 display" style="max-width: 18rem;">
       <div class="card-header">Pincode: ${pin}</div>
