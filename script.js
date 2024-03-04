@@ -115,10 +115,11 @@ async function data() {
     var res = await fetch(`https://api.postalpincode.in/pincode/${pin}`);
     var final = await res.json();
     var offices = final[0].PostOffice;
+    
     for (var i = 0; i < offices.length; i++) {
-      var col = document.createElement("div");
-      col.className = "col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4"
-      col.innerHTML = `<div class="card border-dark mb-3 display" style="max-width: 18rem;">
+      var col = create_div("div","class","col-md-3")
+      var post = create_div("div","class","post_office")
+      post.innerHTML = `<div class="card border-dark mb-3 display" style="max-width: 18rem;">
       <div class="card-header">Pincode: ${pin}</div>
       <div class="card-body text-dark">
         <h5 class="card-title">Name: ${offices[i].Name}</h5>
@@ -127,7 +128,8 @@ async function data() {
         <h5 class="card-title">District: ${offices[i].District}</h5>
         <h5 class="card-title">State: ${offices[i].State}</h5>        
       </div>
-    </div>`  
+    </div>` 
+      col.append(post) 
       row.append(col);
       container.append(row);
       result.append(container)
