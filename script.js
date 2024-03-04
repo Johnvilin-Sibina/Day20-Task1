@@ -1,4 +1,5 @@
-//Pincode is given by the user and using the pincode information about the post office is displayed
+//This task is done using PostalPinCode API. Pincode is given by the user and using the pincode information
+// about the post office is displayed
 
 
 //This function is to create h1 tag and this function takes tagname, attrname, attrvalue and content as its parameters
