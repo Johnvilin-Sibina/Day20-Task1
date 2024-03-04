@@ -1,4 +1,4 @@
-//Pincode is given bythe user and using the pincode information about the post office is displayed
+//Pincode is given by the user and using the pincode information about the post office is displayed
 
 
 //This function is to create h1 tag and this function takes tagname, attrname, attrvalue and content as its parameters
