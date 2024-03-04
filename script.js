@@ -53,9 +53,9 @@ function create_button(tagname, attr1name, attr1value, attr2name, attr2value, at
 }
 
 //This function is to create div and this function takes tagname,attrname and attrvalue as its parameters
-function create_div(tagname,attrname,attrvalue){
+function create_div(tagname, attrname, attrvalue) {
   var res = document.createElement(tagname);
-  res.setAttribute(attrname,attrvalue);
+  res.setAttribute(attrname, attrvalue);
   return res;
 }
 
@@ -101,25 +101,38 @@ var button = create_button("button", "type", "button", "class", "submit", "oncli
 section.append(label, br1, input, br2, br3, button);
 document.body.append(heading1, heading2, section);
 
-var result = create_div("div", "class","info");
+var result = create_div("div", "class", "info");
+var container = create_div("div", "class", "container");
+var row = create_div("div", "class", "row");
 
-var container = create_div("div","class","container");
+// Appended the initial empty container and row
+container.append(row);
+result.append(container);
+document.body.append(result);
 
-var row = create_div("div","class","row");
-row.classname = "row";
 
 //This function gets the pincode from the input field that is given by the user and uses the pincode provided by the user
 //and  fetched data about the Post Offices with that pincode and displays the fetched data
 async function data() {
-  try{
+  try {
+
     var pin = document.querySelector("input").value;
     var res = await fetch(`https://api.postalpincode.in/pincode/${pin}`);
     var final = await res.json();
     var offices = final[0].PostOffice;
-    
+
+    //Clears the previous search result of the try block if any
+    row.innerHTML = "";
+
+    var prev_res2 = document.querySelector(".error");
+    //Removes the previous search result of the catch block if any
+    if (prev_res2) {
+      prev_res2.remove();
+    }
+
     for (var i = 0; i < offices.length; i++) {
-      var col = create_div("div","class","col-md-4")
-      var post = create_div("div","class","post_office")
+      var col = create_div("div", "class", "col-md-4")
+      var post = create_div("div", "class", "post_office")
       post.innerHTML = `<div class="card border-dark mb-3 display" style="max-width: 18rem;">
       <div class="card-header">Pincode: ${pin}</div>
       <div class="card-body text-dark">
@@ -129,19 +142,30 @@ async function data() {
         <h5 class="card-title">District: ${offices[i].District}</h5>
         <h5 class="card-title">State: ${offices[i].State}</h5>        
       </div>
-    </div>` 
-      col.append(post) 
+    </div>`
+      col.append(post)
       row.append(col);
-      container.append(row);
-      result.append(container)
-      document.body.append(result);
     }
+    // Appended the updated row to the container
+    container.append(row);
+    result.append(container);
+    document.body.append(result);
   }
-  catch(error){
+  catch (error) {
+    // Clears the previous search results of the try block if any
+    if(row){
+      row.innerHTML = "";
+  }
+  
+    var prev_res2 = document.querySelector(".error");
+    //Removes the previous search result of the catch block if any
+    if (prev_res2) {
+      prev_res2.remove();
+    }
     var no_data = document.createElement("div")
-    no_data.setAttribute("class","error");
+    no_data.setAttribute("class", "error");
     no_data.innerHTML = "Sorry! Data Not Found. Please Make Sure You Provide the Correct Pincode"
     document.body.append(no_data)
   }
-  }
-  
+}
+
