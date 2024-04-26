@@ -16,3 +16,5 @@
 <p>Your task should follow code resuability.</p>
 
 <h4>I have fllowed all the above mentioned constriants.</h4>
+<h4>Deployment URL:</h4>
+<a href="https://animated-entremet-81156b.netlify.app/">https://animated-entremet-81156b.netlify.app/</a>
