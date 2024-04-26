@@ -77,6 +77,7 @@ var heading2 = create_h1("h1", "class", "text", "My Website is Here to Help You"
 
 //The function create_section is called here and a section tag is created and values for the parameters are passed
 var section = create_section();
+section.className = "section";
 
 //The function create_label is called here and a label tag is created here and values for the parameters are passed
 var label = create_label("label", "for", "search", "class", "main", "Enter the Pincode here:")
@@ -85,7 +86,7 @@ var label = create_label("label", "for", "search", "class", "main", "Enter the P
 var br1 = create_break("br");
 
 //THe function create_input is called here and a input field is created and values for the parameters are passed 
-var input = create_input("input", "type", "text", "id", "search", "class", "field")
+var input = create_input("input", "type", "text", "class", "field")
 
 //The function create_break is called here twice and two break tags are created here
 var br2 = create_break("br");
